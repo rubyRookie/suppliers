@@ -40,6 +40,6 @@ gem 'jquery-rails'
 group :test do
   gem 'minitest'
   gem 'capybara'
-  gem 'win32console'
+#  gem 'win32console'
   gem 'turn'
 end
