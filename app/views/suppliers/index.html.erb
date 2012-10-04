@@ -1,0 +1,48 @@
+<h1>Listing suppliers</h1>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Street</th>
+    <th>Postcode</th>
+    <th>City</th>
+    <th>Longitude</th>
+    <th>Latitude</th>
+    <th>Gmaps</th>
+    <th>Phone</th>
+    <th>Fax</th>
+    <th>Mail</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @suppliers.each do |supplier| %>
+  <tr>
+    <td><%= supplier.company %></td>
+    <td><%= supplier.street %></td>
+    <td><%= supplier.postcode %></td>
+    <td><%= supplier.city %></td>
+    <td><%= supplier.longitude %></td>
+    <td><%= supplier.latitude %></td>
+    <td><%= supplier.gmaps %></td>
+    <td><%= supplier.phone %></td>
+    <td><%= supplier.fax %></td>
+    <td><%= supplier.mail %></td>
+    <td><%= link_to 'Show', supplier %></td>
+    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+    <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Supplier', new_supplier_path %>
+<br />
+<br />
+<%= link_to "My Delivery Categories", categories_path, :target => "_blank" %>
+<br />
+<br />
+<%= gmaps("markers" => {"data" => @json, "options" => {"list_container" => "markers_list" } }) %>
+<ul id="markers_list">  </ul>

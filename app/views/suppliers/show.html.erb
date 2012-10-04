@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= @supplier.company %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @supplier.street %>
+</p>
+
+<p>
+  <b>Postcode:</b>
+  <%= @supplier.postcode %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @supplier.city %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @supplier.longitude %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @supplier.latitude %>
+</p>
+
+<p>
+  <b>Gmaps:</b>
+  <%= @supplier.gmaps %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @supplier.phone %>
+</p>
+
+<p>
+  <b>Fax:</b>
+  <%= @supplier.fax %>
+</p>
+
+<p>
+  <b>Mail:</b>
+  <%= @supplier.mail %>
+</p>
+
+<hr />
+<h3>In Categories:</h3>
+<ul>
+<% @categories.each do |category| %>
+<li><%= category.name %></li>
+<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
+<%= link_to 'Back', suppliers_path %>
